@@ -1,0 +1,354 @@
+/* Wallet adapter overrides using bento design tokens (Zero hardcoded hex values) */
+
+/* General button overrides for header / navbar */
+.app-header .wallet-adapter-button,
+.wallet-adapter-button:not(.wallet-adapter-modal-list li button),
+.wallet-adapter-button-trigger {
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  width: auto !important;
+  min-width: max-content !important;
+  height: 44px !important;
+  padding: 0 18px !important;
+  line-height: 1 !important;
+  border-radius: var(--radius-pill) !important;
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  box-shadow: none !important;
+  background-color: var(--text-primary) !important;
+  color: var(--tile-raised) !important;
+  border: none !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+}
+
+.wallet-adapter-button:not(.wallet-adapter-modal-list li button):hover,
+.wallet-adapter-button-trigger:hover {
+  opacity: 0.9 !important;
+}
+
+.wallet-adapter-button:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
+.wallet-adapter-button-start-icon,
+.wallet-adapter-button-end-icon {
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+/* Dropdown list */
+.wallet-adapter-dropdown-list {
+  background-color: var(--tile-raised) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow-float) !important;
+  z-index: 50 !important;
+  min-width: 200px !important;
+  margin-top: 8px !important;
+  right: 0 !important;
+  padding: 8px !important;
+}
+
+.wallet-adapter-dropdown-list-item {
+  height: 44px !important;
+  border-radius: var(--radius-md) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  padding: 0 16px !important;
+}
+
+.wallet-adapter-dropdown-list-item:hover {
+  background-color: var(--bg-card) !important;
+}
+
+/* ------------------------------------------------------------- */
+/* WALLET MODAL REDESIGN (Bento Bento System)                      */
+/* ------------------------------------------------------------- */
+
+.wallet-adapter-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 9999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.wallet-adapter-modal-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+  opacity: 0;
+  transition: opacity 0.2s ease !important;
+}
+
+.wallet-adapter-modal.wallet-adapter-modal-fade-in .wallet-adapter-modal-overlay {
+  opacity: 1 !important;
+}
+
+.wallet-adapter-modal-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  position: relative !important;
+  width: min(460px, calc(100vw - 32px)) !important;
+  max-height: calc(100vh - 40px) !important;
+  overflow-y: auto !important;
+  background-color: var(--tile-raised) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-shell) !important;
+  padding: 36px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3) !important;
+  box-sizing: border-box !important;
+  transform: translateY(12px) scale(0.98);
+  opacity: 0;
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.22s ease !important;
+}
+
+.wallet-adapter-modal.wallet-adapter-modal-fade-in .wallet-adapter-modal-wrapper {
+  transform: translateY(0) scale(1) !important;
+  opacity: 1 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wallet-adapter-modal-wrapper,
+  .wallet-adapter-modal-overlay {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Close button */
+.wallet-adapter-modal-button-close {
+  position: absolute !important;
+  top: 24px !important;
+  right: 24px !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 50% !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 10 !important;
+}
+
+.wallet-adapter-modal-button-close svg {
+  width: 14px !important;
+  height: 14px !important;
+  fill: var(--text-secondary) !important;
+}
+
+.wallet-adapter-modal-button-close:hover {
+  background-color: var(--border) !important;
+  border-color: var(--border-strong) !important;
+  fill: var(--text-primary) !important;
+}
+
+/* Header title container & styling */
+.wallet-adapter-modal-title {
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: var(--text-primary) !important;
+  margin: 0 0 24px 0 !important;
+  padding-top: 64px !important;
+  position: relative !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.3 !important;
+}
+
+/* Eyebrow badge above title */
+.wallet-adapter-modal-title::before {
+  content: "SOLANA TREASURY GATEWAY";
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background-color: var(--accent-soft);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+}
+
+/* Wallet list styling */
+.wallet-adapter-modal-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  margin: 0 0 24px 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.wallet-adapter-modal-list li {
+  margin: 0 !important;
+}
+
+/* Wallet row buttons */
+.wallet-adapter-modal-list li button.wallet-adapter-button {
+  width: 100% !important;
+  height: 64px !important;
+  border-radius: var(--radius-item) !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  padding: 0 20px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  color: var(--text-primary) !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  box-shadow: none !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-align: left !important;
+}
+
+.wallet-adapter-modal-list li button.wallet-adapter-button:hover {
+  background-color: var(--tile-raised) !important;
+  border-color: var(--border-strong) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.wallet-adapter-modal-list li button.wallet-adapter-button:active {
+  transform: scale(0.99) !important;
+}
+
+.wallet-adapter-modal-list li button.wallet-adapter-button:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+}
+
+/* Left icon in row */
+.wallet-adapter-modal-list li button.wallet-adapter-button .wallet-adapter-button-start-icon {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 12px !important;
+  background-color: var(--tile-raised) !important;
+  border: 1px solid var(--border) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.wallet-adapter-modal-list li button.wallet-adapter-button .wallet-adapter-button-start-icon img {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Status Pill "Detected" */
+.wallet-adapter-modal-list li button.wallet-adapter-button span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 5px 12px !important;
+  border-radius: var(--radius-pill) !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  background-color: var(--accent-soft) !important;
+  color: var(--accent-dark) !important;
+  border: 1px solid var(--border) !important;
+}
+
+.wallet-adapter-modal-list li button.wallet-adapter-button span::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  display: inline-block;
+}
+
+/* More options / Expand button */
+.wallet-adapter-modal-list-more {
+  width: 100% !important;
+  height: 48px !important;
+  border-radius: var(--radius-md) !important;
+  background-color: var(--bg-card) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--text-secondary) !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  margin-top: 8px !important;
+}
+
+.wallet-adapter-modal-list-more:hover {
+  background-color: var(--tile-raised) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-strong) !important;
+}
+
+.wallet-adapter-modal-list-more svg {
+  fill: var(--text-secondary) !important;
+  transition: transform 0.2s ease !important;
+}
+
+.wallet-adapter-modal-list-more-icon-rotate {
+  transform: rotate(180deg) !important;
+}
+
+/* Footer & Security Note inside modal wrapper */
+.wallet-adapter-modal-wrapper::after {
+  content: "Non-custodial connection. TreasuryOS never stores your private keys or initiates unauthorized transactions without your explicit signature.";
+  display: block;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.wallet-adapter-modal-middle {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+}
+
+.wallet-adapter-modal-middle svg {
+  width: 64px;
+  height: 64px;
+  fill: var(--text-muted);
+}
+
+@media (max-width: 390px) {
+  .wallet-adapter-modal-wrapper {
+    width: calc(100vw - 24px) !important;
+    padding: 24px !important;
+  }
+}

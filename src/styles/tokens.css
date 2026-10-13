@@ -1,0 +1,61 @@
+:root {
+  --bg-canvas: #ECECEA;
+  --tile: #F7F7F6;
+  --tile-raised: #FFFFFF;
+  --tile-border: rgba(0,0,0,0.06);
+  --shell-gap: 16px;
+  --radius-shell: 28px;
+  --radius-item: 18px;
+  --shadow-tile: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+
+  --bg-page: #FFFFFF;
+  --bg-sidebar: #F4F4F3;
+  --bg-card: #F2F2F1;
+  --bg-card-raised: #FFFFFF;
+  --border: #E4E4E2;
+  --border-strong: #D4D4D1;
+  --text-primary: #0E0E0E;
+  --text-secondary: #5C5C58;
+  --text-muted: #9A9A95;
+
+  /* brand accent (violet) */
+  --accent: #5B3FE8;
+  --accent-bright: #7B5CFF;
+  --accent-light: #A78BFA;
+  --accent-dark: #3B2A9E;
+  --accent-soft: #F0EDFE;
+
+  --positive: #2E6B4F;
+  --negative: #C0392B;
+  --warning: #B7791F;
+  --warning-soft: #F8EBD2;
+  --negative-soft: #F6DEDA;
+  --ink: #0B0B0B;
+
+  /* hero card gradient (deep indigo to bright violet) */
+  --hero-from: #0A0818;
+  --hero-via: #1F1748;
+  --hero-to: #3B2896;
+
+  --radius-xl: 24px;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-float: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

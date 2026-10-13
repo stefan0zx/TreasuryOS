@@ -1,0 +1,7 @@
+{
+  "name": "TreasuryOS",
+  "description": "Autonomous treasury agent dashboard for a Solana DAO on Devnet",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
+
